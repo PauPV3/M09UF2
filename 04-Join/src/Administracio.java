@@ -23,7 +23,7 @@ class Administracio {
         }
 
         for (int i = 0; i < numPoblacioActiva; i++) {
-            System.out.printf("Ciutada-%d -> edat: %d / total: %.2f", i, poblacioActiva[i].getEdat(), poblacioActiva[i].getCobrat());
+            System.out.printf("Ciutada-%d -> edat: %d / total: %.2f ", i, poblacioActiva[i].getEdat(), poblacioActiva[i].getCobrat());
             System.out.println(" ");
         }
     }
