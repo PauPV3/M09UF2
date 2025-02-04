@@ -4,17 +4,17 @@ import java.util.List;
 public class Esdeveniment {
     private int placesDisponibles;
     private final int maxPlaces;
-    private final List<Asistent> asistents;
+    private final List<Assistent> assistents;
 
-    piblic Esdeveniment(int maxPlaces) {
+    public Esdeveniment(int maxPlaces) {
         this.maxPlaces = maxPlaces;
         this.placesDisponibles = maxPlaces;
-        this.asistents = new ArrayList<>();
+        this.assistents = new ArrayList<>();
     }
 
-    public synchronized boolean ferReserva(Asistent asistent) {
+    public synchronized boolean ferReserva(Assistent assistent) {
         if (placesDisponibles > 0) {
-            asistents.add(asistent);
+            assistents.add(assistent);
             placesDisponibles --;
             System.out.println(assistent.getNom() + " ha fet una reserva. Places disponibles: " + placesDisponibles);
             return true;
@@ -24,7 +24,7 @@ public class Esdeveniment {
         }
     }
 
-    public synchronized boolean cancelaReserva(Asistent asistent) {
+    public synchronized boolean cancelaReserva(Assistent assistent) {
         if (assistents.remove(assistent)) {
             placesDisponibles++;
             System.out.println(assistent.getNom() + " ha cancel·lat una reserva. Places disponibles: " + placesDisponibles);
