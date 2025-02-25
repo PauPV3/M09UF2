@@ -29,14 +29,14 @@ public class Filòsof extends Thread {
 
     private void pensar() throws InterruptedException {
         System.out.println("Filòsof " + id + " està pensant.");
-        Thread.sleep(1000 + random.nextInt(1000));
+        Thread.sleep(1000 + random.nextInt(1000)); // Pensar entre 1s i 2s
     }
 
     private void menjar() throws InterruptedException {
         while (true) {
             if (esquerra.agafar()) {
                 System.out.println("Filòsof " + id + " agafa la forquilla esquerra " + esquerra.getId());
-    
+
                 if (dreta.agafar()) {
                     System.out.println("Filòsof " + id + " agafa la forquilla dreta " + dreta.getId());
                     System.out.println("Filòsof " + id + " està menjant.");
@@ -50,10 +50,10 @@ public class Filòsof extends Thread {
                     System.out.println("Filòsof " + id + " deixa la forquilla esquerra (" + esquerra.getId() + ") i espera.");
                     gana++;
                     System.out.println("Filòsof " + id + " gana=" + gana);
-                    Thread.sleep(500 + random.nextInt(500)); //espera 0 i 1s
+                    Thread.sleep(500 + random.nextInt(500)); // Espera entre 0.5s i 1s
                 }
             } else {
-                Thread.sleep(500 + random.nextInt(500)); //espera entre 0 i 1s
+                Thread.sleep(500 + random.nextInt(500)); // Espera entre 0.5s i 1s
             }
         }
     }
