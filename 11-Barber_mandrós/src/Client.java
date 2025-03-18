@@ -6,7 +6,7 @@ public class Client {
     }
     
     public void tallarseElCabell() {
-
+        System.out.println("Tallant cabell a "+nom);
     }
 
     public String getNom() {
